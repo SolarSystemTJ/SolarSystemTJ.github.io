@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>test</title>
+
+	<style type="text/css">
+		body{
+			background: black;
+			margin: 0px;		
+		}
+	</style>
+
+</head>
+ <body style="margin: 0; width: 100%; height: 100vh; background-color: #000; overflow: hidden;">
+	
+
+ 	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script>
+
+	<script>
+	let anything = document.createElement('canvas');
+
+
+		let H = window.innerHeight, W = window.innerWidth;
+
+	
+
+		//Сцена и Камера
+		const scene = new THREE.Scene();
+		const camera = new THREE.PerspectiveCamera(45, W/H, 1, 10000000);
+		const container = document.createElement('div');
+
+		//Рендер
+		const render = new THREE.WebGLRenderer({
+			alpha: true,
+			antialias: true
+		});
+
+		render.setSize(W, H);
+		document.body.appendChild(container);
+
+
+		// let light = new THREE.PointLight(0xffffff, 1.4, 100000);
+		// light.position.set(0, 0, 0);
+		// light.casSahdow = true;
+		// light.shadowMapWidth = 2048;
+		// light.shadowMapHeight = 2048;
+		// scene.add(light);
+
+
+let mouseX = 0;
+let mouseY = 0;
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+});
+
+
+//Lights
+let light2 = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(light2);
+
+let light1 = new THREE.PointLight(0xffffff, 0.5);
+scene.add(light1);
+
+
+
+//stars
+	const color = 0xffffff, intensity = 1;
+  const light = new THREE.DirectionalLight(color, intensity);
+  light.position.set(-1, 4, 6);
+  scene.add(light);
+
+
+  const getRandomParticelPos = (particleCount) => {
+  const arr = new Float32Array(particleCount * 3);
+  for (let i = 0; i < particleCount; i++) {
+    arr[i] = (Math.random() - 0.4) * 20000;
+  }
+  return arr;
+};
+
+
+	const geometry = new THREE.BufferGeometry();
+	geometry.setAttribute(
+		"position",
+		new THREE.BufferAttribute(getRandomParticelPos(200000), 3)
+		);
+
+	//const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
+	const material = new THREE.PointsMaterial({
+				color: 0xffffff,
+				opacity: 0.6,
+				size: 1,
+				sizeAttenuation: false
+
+	})
+
+	
+
+	const star = new THREE.Points(geometry, material);
+	star.scale.set(60, 60, 60)
+scene.add(star);
+
+
+//\stars
+		
+
+	let ambient = new THREE.AmbientLight(0x222222);
+	scene.add(ambient)
+	
+//Sun		
+
+	var sun_geom = new THREE.SphereGeometry(2300, 50, 50, 0, Math.PI * 2, 0, Math.PI * 2);
+
+
+	let texture = new THREE.TextureLoader().load(
+		'http://xnameetingpoint.weebly.com/uploads/7/4/1/2/7412327/2399293_orig.png'
+		//'https://i.imgur.com/WCenSFw.jpg'
+		//	'https://www.filterforge.com/filters/10089.jpg'
+		);
+	texture.anisotropy = 8;
+
+
+	const sun_mat = new THREE.MeshLambertMaterial({
+		map: texture,
+		//emissive: 0xf
+	})
+
+	
+
+	let sun = new THREE.Mesh(sun_geom, sun_mat);
+	scene.add(sun);
+
+//Mercury
+let mercury_geom = new THREE.SphereGeometry(60, 20, 20);
+
+let mercury_texture = new THREE.TextureLoader().load('https://kartinkin.net/uploads/posts/2021-07/1626712074_6-kartinkin-com-p-tekstura-merkuriya-krasivo-7.jpg');
+
+let mercury_mat = new THREE.MeshPhongMaterial({
+	map: mercury_texture
+});
+
+
+
+let mercury = new THREE.Mesh(mercury_geom, mercury_mat);
+scene.add(mercury);
+
+//
+
+
+//Venera
+let venera_geom = new THREE.SphereGeometry(90, 20, 20);
+
+
+let textureVen = new THREE.TextureLoader().load('https://kartinkin.net/uploads/posts/2021-07/1627422862_21-kartinkin-com-p-tekstura-poverkhnosti-planet-krasivo-24.jpg');
+
+
+let venera_mat = new THREE.MeshPhongMaterial({
+	map: textureVen
+});
+
+let venera = new THREE.Mesh(venera_geom, venera_mat)
+
+scene.add(venera);
+
+
+
+
+//Earth
+		let earth_geom = new THREE.SphereGeometry(100, 20, 30),
+		//	earth_mat = new THREE.MeshNormalMaterial();
+
+			thisT = new THREE.TextureLoader().load('https://gamerwall.pro/uploads/posts/2021-11/1637037519_5-gamerwall-pro-p-tekstura-planeti-oboi-na-zastavku-5.jpg');
+
+			//thisT.anisotropy = 8
+
+
+			
+			earth_mat = new THREE.MeshBasicMaterial({
+				//emissiveMap: thisT
+				map: thisT
+			})
+
+
+		let earth = new THREE.Mesh(earth_geom, earth_mat);
+		earth.position.x = 15000;
+		scene.add(earth);
+
+
+//Mars
+
+	
+		let mars_geom = new THREE.SphereGeometry(60, 20, 30),
+
+		//	mars_mat = new THREE.MeshNormalMaterial();
+
+			tex_m = new THREE.TextureLoader().load('https://phonoteka.org/uploads/posts/2022-09/1663036482_2-phonoteka-org-p-tekstura-marsa-pinterest-2.jpg');
+
+		//	thisT.anisotropy = 8
+
+
+			
+			mars_mat = new THREE.MeshBasicMaterial({
+				//emissiveMap: thisT
+				map: tex_m
+			})
+
+		let mars = new THREE.Mesh(mars_geom, mars_mat);
+
+		scene.add(mars);
+
+
+//Jupiter
+
+let jup_geom = new THREE.SphereGeometry(350, 90, 90);
+
+let tex_j = new THREE.TextureLoader().load(
+	//'https://www.solarsystemscope.com/textures/download/8k_jupiter.jpg'
+	'https://textures.forrest.cz/textures/library/maps/Jupiter.jpg'
+	);
+
+ tex_j.anisotropy = 8;
+
+let jup_mat = new THREE.MeshPhongMaterial({
+	map: tex_j
+});
+
+let jupiter = new THREE.Mesh(jup_geom, jup_mat);
+scene.add(jupiter)
+
+//
+
+
+
+//Saturn
+
+let saturn_geom = new THREE.SphereGeometry(220, 90, 90);
+
+let tex_s = new THREE.TextureLoader().load(
+	//'https://www.solarsystemscope.com/textures/download/8k_saturn.jpg'
+	'https://static.wikia.nocookie.net/planet-texture-maps/images/6/61/Saturn.jpg/revision/latest?cb=20190416043829'
+	);
+
+tex_s.anisotropy = 8;
+
+let sat_mat = new THREE.MeshPhongMaterial({
+	map: tex_s
+});
+
+let saturn = new THREE.Mesh(saturn_geom, sat_mat);
+scene.add(saturn)
+
+
+//Uran
+
+
+let uran_geom = new THREE.SphereGeometry(160, 90, 90);
+
+let tex_u = new THREE.TextureLoader().load(
+	'https://kartinkin.net/uploads/posts/2021-07/1627112608_1-kartinkin-com-p-tekstura-planeti-uran-krasivo-1.jpg'
+	);
+
+tex_u.anisotropy = 8;
+
+let uran_mat = new THREE.MeshPhongMaterial({
+	map: tex_u
+});
+
+let uran = new THREE.Mesh(uran_geom, uran_mat);
+scene.add(uran)
+
+
+//Neptun
+
+
+let neptun_geom = new THREE.SphereGeometry(160, 90, 90);
+
+let tex_n = new THREE.TextureLoader().load(
+	//'https://kartinkin.net/uploads/posts/2021-07/1627112608_1-kartinkin-com-p-tekstura-planeti-uran-krasivo-1.jpg'
+	'https://upload.wikimedia.org/wikipedia/commons/1/1e/Solarsystemscope_texture_2k_neptune.jpg'
+	);
+
+tex_u.anisotropy = 8;
+
+let neptun_mat = new THREE.MeshPhongMaterial({
+	map: tex_n
+});
+
+let neptun = new THREE.Mesh(neptun_geom, neptun_mat);
+scene.add(neptun)
+
+
+
+
+		let t = 0;
+
+
+		camera.position.z = 20300;
+		camera.rotation.z = - Math.PI/20;
+		function animate(){
+			requestAnimationFrame(animate);
+
+			
+//sun
+			sun.rotation.y += 0.001;
+				mercury.rotation.y += 0.03;
+				venera.rotation.y += 0.01;
+				earth.rotation.y += 0.01;
+				mars.rotation.y += 0.01;
+				jupiter.rotation.y += 0.01;
+				saturn.rotation.y += 0.01;
+				uran.rotation.y += 0.01;
+				neptun.rotation.y += 0.01;
+
+
+//Mercury
+		mercury.position.x = Math.sin(t*0.3)*4000;
+		mercury.position.z = Math.cos(t*0.3)*4000;
+
+
+//Venera
+
+	  venera.position.x = Math.sin(t*0.2)*5500;
+		venera.position.z = Math.cos(t*0.2)*5500;
+
+
+//earth
+			earth.position.x = Math.sin(t*0.1)*7500;
+			 earth.position.z = Math.cos(t*0.1)*7500;
+
+
+//Mars
+  		mars.position.x = Math.sin(t*0.08)*8500;
+			mars.position.z = Math.cos(t*0.08)*8500;
+
+//Jupiter
+
+			jupiter.position.x = Math.sin(t*0.10)*11500;
+			jupiter.position.z = Math.cos(t*0.10)*11500;
+
+//Saturn
+			saturn.position.x = Math.sin(t*0.05)*13000;
+			saturn.position.z = Math.cos(t*0.05)*13000;
+
+
+// //Uran
+			uran.position.x = Math.sin(t*0.03)*14000;
+			uran.position.z = Math.cos(t*0.01)*14000;
+
+//Neptun
+
+			neptun.position.x = Math.sin(t*0.08)*14800;
+			neptun.position.z = Math.cos(t*0.08)*14800;
+
+
+// // //camera
+			  // camera.position.z = saturn.position.z+200;
+			  // camera.lookAt(saturn.position);
+			  
+
+			  // 	scene.rotation.x = mouseX * 0.0005;
+					// scene.rotation.y = mouseY * 0.0005;
+	
+
+
+			t += Math.PI/180*2;
+			render.render(scene, camera);
+		}
+	
+   animate();
+		container.appendChild(render.domElement);
+
+
+
+
+
+
+	</script>
+</body>
+</html>
+
+

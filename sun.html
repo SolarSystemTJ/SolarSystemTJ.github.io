@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nothing</title>
+</head>
+<body>
+	
+	<script src="./Three_JS_Main_Lib.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/three@0.123.0/examples/jsm/loaders/GLTFLoader.j"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/three@0.123.0/examples/jsm/postprocessing/RenderPass.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/three@0.123.0/examples/jsm/postprocessing/UnrealBloomPass.js"></script>
+	<script type="text/javascript">
+
+//import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.123.0/build/three.module.js"; 
+// import {OrbitControls} from "https://cdn.jsdelivr.net/npm/three@0.123.0/examples/jsm/controls/OrbitControls.js"; 
+
+// import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.123.0/examples/jsm/loaders/GLTFLoader.js';
+  
+// import { EffectComposer } from 'https://cdn.jsdelivr.net/npm/three@0.123.0/examples/jsm/postprocessing/EffectComposer.js';
+// import { RenderPass } from 'https://cdn.jsdelivr.net/npm/three@0.123.0/examples/jsm/postprocessing/RenderPass.js'; 
+// import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.123.0/examples/jsm/postprocessing/UnrealBloomPass.js'; 
+  
+
+
+		/*const w = window.innerWidth, h = window.innerHeight;
+
+
+		const scene = new THREE.Scene();
+		const camera = new THREE.Camera(45, w/h, 1, 1000);
+		const render = new THREE.WebGLRenderer();
+		render.setSize(w, h);
+
+		document.body.appendChild(render.domElement);
+
+		const geom = new THREE.SphereGeometry(3, 30, 30);
+		const mat = new THREE.MeshNormalMaterial();
+		const sphere = new THREE.Mesh(geom, mat);
+		scene.add(sphere);
+
+
+		camera.position.z = 50;
+
+		function animate(){
+			requestAnimationFrame(animate);
+			render.render(scene, camera);
+		}
+		animate();
+*/
+
+	const scene = new THREE.Scene();
+			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+
+			const renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+
+			let blooomPass = new UnrealBloomPass();
+
+
+			const geometry = new THREE.SphereGeometry(3, 50, 50);
+			const mat = new THREE.MeshBasicMaterial();
+			const sphere = new THREE.Mesh( geometry, mat );
+			scene.add( sphere );
+
+			camera.position.z = 10;
+
+			function animate() {
+				requestAnimationFrame( animate );
+
+				//sphere.rotation.x += 0.01;
+				//sphere.rotation.y += 0.01;
+				//sphere.rotation.z += 0.01;
+				renderer.render( scene, camera );
+			};
+
+			animate();
+
+	</script>
+</body>
+</html>

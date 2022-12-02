@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>test</title>
+
+	<style type="text/css">
+
+	::-webkit-scrollbar {
+    width: 10px; /* ширина для вертикального скролла */
+    height: 3px; /* высота для горизонтального скролла */
+    background-color: #000;
+}
+
+	::-webkit-scrollbar-thumb {
+    /*background-color: gray;*/
+    background-color: rgb(14, 17, 33);
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 10px rgb(37, 38, 52);
+}
+
+		#text-about{
+			top: 10px;
+			overflow-y: scroll;
+			 /*scrollbar-color: #458245 #714826;*/
+			height: 300px;
+			color: white;
+			text-align: center;
+		}
+
+		#more-information{
+			width: 200px;
+		}
+
+		body{
+			max-width: 1366;
+			max-height: 736;
+		}
+
+		.line{
+		font-family: 'Rajdhani-Regular', sans-serif;
+			align-items: center;
+		/*background-color: black;*/
+		background-color: rgb(0, 1, 13);
+    /* border-radius: 10px 10px; */
+    	width: 100%;
+    	height: 70px;
+    /* background-color: white;*/
+		}
+
+	
+		.bar{
+			font-family: 'Rajdhani-Regular', sans-serif;
+			/*background-color: black;*/
+			background-color: rgb(0, 0, 10);
+    		color: white;
+    /* background-color: white; */
+    		float: right;
+    		height: 100%;
+    		width: 365px;
+		}	
+
+		.bar h1{
+			text-align: center;
+		}	
+
+		.planets{
+			position: relative;
+			left: 20px;
+		}
+
+
+		button, input{
+			text-align: center;
+			/*font-family: "Roboto";*/
+			background-color: black;
+			color: white;
+
+			/*border-color: blue;*/
+			/*border-color: rgb(94, 193, 253);*/
+			border-color: rgb(64, 182, 253);
+			margin-top: 7px;
+			/*margin: 1px;*/
+			border-radius: 3px;
+			width: 105px;
+			height: 45px;
+			box-shadow: 0px 0px 10px 2px rgb(0, 10, 79);	
+		}
+
+		button:hover, input:hover{
+			background-color: rgb(0, 0, 9);
+			border-color: rgb(121, 204, 253);
+			box-shadow: 0px 0px 10px 2px rgb(0, 14, 108);
+		}
+		
+	#solar{
+		width: 120px;
+	}	
+
+
+	.languages {
+		margin: 2px;
+	/*	border-color: rgb(64, 182, 253);*/
+		border: none;
+		float: right;
+		position: relative;
+		width: 50px;
+		height: 35px;
+	}
+
+	#tajik{
+		background-image: url(./img/tajik.png);
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+
+
+	#russian{
+		background-image: url(./img/russian.png);
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+
+
+	#english{
+		background-image: url(./img/usa.png);
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+
+	#english{
+
+	}
+
+	</style>
+
+</head>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script> -->
+<script src="./glowing-sun-master/public/index.js"></script>
+<script src="./Three_JS_Main_Lib.js"></script>
+<script src="./public/llib.js"></script>
+ <!-- 	
+ 	<script src="./public/llib.js"></script>
+
+	<script src="./FirstPersonControls.js"></script>
+	<script src="./EffectComposer.js"></script>
+	<script src="./RenderPass.js"></script>
+	<script src="./UnrealBloomPass.js"></script> -->
+
+
+	<!-- <script src="./FlyControls.js"></script> -->
+<script src="./OrbitControls.js"></script>
+ <body style="margin: 0; width: 100%; height: 100vh; background-color: #000; overflow: hidden;">
+	
+
+ 	<!-- <div id="asd" style="width: 30px; position: absolute; z-index: 100; display: none;">
+ 		Замин
+ 	</div>
+ -->
+
+ 	<div class="line" style="">
+ 		<!-- <button id="sun">Офтоб</button> -->
+ 		<button id="solar">Главная</button>
+ 		<input type="button" value="Солнце" id="sun" onclick="">
+ 		<!-- <button id="mercury">Меркурий</button> -->
+ 		<input type="button" value="Меркурий" id="mercury" onclick="">
+ 		<button id="venera">Венера</button>
+ 		<button id="earth">Земля</button>
+ 		<button id="mars">Марс</button>
+ 		<button id="jupiter">Юпитер</button>
+ 		<button id="saturn">Сатурн</button>
+ 		<button id="uran">Уран</button>
+ 		<button id="neptun">Нептун</button>
+ 		
+ 		<button class="languages" id="english"></button>
+ 		<button class="languages" id="russian"></button>
+ 		<button class="languages" id="tajik"></button>
+ 		
+ 	
+ <!-- 		 <img src="./img/usa.png" class="languages" id="english">
+
+
+ 		 <img src="./img/russian.png" class="languages" id="russian">
+
+
+ 		 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Flag_of_Tajikistan.svg/250px-Flag_of_Tajikistan.svg.png" class="languages" id="tajik">
+
+ 		<img src="./img/tajik.png" class="languages" id="tajik">
+ -->
+ 	</div>
+
+ 	<div class="bar" style="">
+ 		<h1 id="title">Солнечная система</h1>
+ 		
+</div>
+ 	</div>
+
+	
+
+	<script>
+
+	 //import { RenderPass } from "https://threejs.org/examples/js/postprocessing/RenderPass.js";	
+
+	let music = new Audio('./audio/relaxing-music-vol1-124477.mp3');
+	music.play();
+	
+	let perem = new Audio('./audio/relaxing-music-vol1-124477.mp3')
+
+
+	let sunRise = false;	
+	let anything = document.createElement('canvas');
+	//Moving boolean
+	let moving = true;
+	let movingMercury = true;
+	let movingVenera = true;
+	let movingEarth = true;
+	let movingMars = true;
+	let movingJupiter = true;
+	let movingSaturn = true;
+	let movingUran = true;
+	let movingNeptun = true;
+//
+		//let H = window.innerHeight, W = window.innerWidth;
+		//	let H = clientHeight, W = clientWidth;
+		let H = 600, W = 980;
+	
+
+		//Сцена и Камера
+		const scene = new THREE.Scene();
+		const camera = new THREE.PerspectiveCamera(45, W/H, 1, 10000000);
+		const container = document.createElement('div');
+
+		//Рендер
+		const render = new THREE.WebGLRenderer({
+			alpha: true,
+			antialias: true
+		});
+
+		render.setSize(W, H);
+		document.body.appendChild(container);
+
+		// render.shadowMap.enabled = true;
+		// render.shadowMap.type = THREE.BasicShadowMap;
+
+		let light = new THREE.PointLight(0xffffff, 1, 200000);
+		//light.position.set(10, 10, 50000);
+		// light.position = 0
+		//light.castSahdow = true;
+		light.shadow.mapSize.width = 1024;
+		light.shadow.mapSize.height = 1024;
+		light.shadow.camera.near = 0.1;
+		light.shadow.camera.far = 25;
+		scene.add(light);
+
+
+
+
+
+
+// let mouseX = 0;
+// let mouseY = 0;
+// document.addEventListener("mousemove", (e) => {
+//   mouseX = e.clientX;
+//   mouseY = e.clientY;
+// });
+
+
+//Lights
+// let light2 = new THREE.AmbientLight(0xffffff, 0.5);
+// scene.add(light2);
+
+// let light1 = new THREE.PointLight(0xffffff, 0.5);
+// scene.add(light1);
+
+
+
+//stars
+	// const color = 0x1111111, intensity = 1;
+ //  const light_s = new THREE.AmbientLight(color, intensity);
+ //  light_s.position.set(-1, 4, 6);
+ //  scene.add(light_s);
+
+
+//   const getRandomParticelPos = (particleCount) => {
+//   const arr = new Float32Array(particleCount * 3);
+//   for (let i = 0; i < particleCount; i++) {
+//     arr[i] = (Math.random() - 0.4) * 20000;
+//   }
+//   return arr;
+// };
+
+
+// 	const geometry = new THREE.BufferGeometry();
+// 	geometry.setAttribute(
+// 		"position",
+// 		new THREE.BufferAttribute(getRandomParticelPos(200000), 3)
+// 		);
+
+// 	//const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
+// 	const material = new THREE.PointsMaterial({
+// 				color: 0xbbbbbb,
+// 				opacity: 0.6,
+// 				size: 1,
+// 				sizeAttenuation: false
+
+// 	})
+
+	
+
+// 	const star = new THREE.Points(geometry, material);
+// 	star.scale.set(70, 70, 70)
+// scene.add(star);
+
+
+// const bloomPass = new UnrealBloomPass(
+//   new THREE.Vector2(window.innerWidth, window.innerHeight),
+//   1.5,
+//   0.4,
+//   0.85
+// );
+// bloomPass.threshold = 0;
+// bloomPass.strength = 2; //intensity of glow
+// bloomPass.radius = 0;
+// const bloomComposer = new EffectComposer(renderer);
+// bloomComposer.setSize(window.innerWidth, window.innerHeight);
+// bloomComposer.renderToScreen = true;
+// bloomComposer.addPass(renderScene);
+// bloomComposer.addPass(bloomPass);
+
+
+//Stars
+				let radius = 6371;
+				const r = radius, starsGeometry = [ new THREE.BufferGeometry(), new THREE.BufferGeometry() ];
+
+				const vertices1 = [];
+				const vertices2 = [];
+
+				const vertex = new THREE.Vector3();
+
+				for ( let i = 0; i < 2500; i ++ ) {
+
+					vertex.x = Math.random() * 2 - 1;
+					vertex.y = Math.random() * 2 - 1;
+					vertex.z = Math.random() * 2 - 1;
+					vertex.multiplyScalar( r );
+
+					vertices1.push( vertex.x, vertex.y, vertex.z );
+
+				}
+
+				for ( let i = 0; i < 15000; i ++ ) {
+
+					vertex.x = Math.random() * 2 - 1;
+					vertex.y = Math.random() * 2 - 1;
+					vertex.z = Math.random() * 2 - 1;
+					vertex.multiplyScalar( r );
+
+					vertices2.push( vertex.x, vertex.y, vertex.z );
+
+				}
+
+				starsGeometry[ 0 ].setAttribute( 'position', new THREE.Float32BufferAttribute( vertices1, 3 ) );
+				starsGeometry[ 1 ].setAttribute( 'position', new THREE.Float32BufferAttribute( vertices2, 3 ) );
+
+				const starsMaterials = [
+					new THREE.PointsMaterial( { color: 0x555555, size: 2, sizeAttenuation: false } ),
+					new THREE.PointsMaterial( { color: 0x555555, size: 1, sizeAttenuation: false } ),
+					new THREE.PointsMaterial( { color: 0x333333, size: 2, sizeAttenuation: false } ),
+					new THREE.PointsMaterial( { color: 0x3a3a3a, size: 1, sizeAttenuation: false } ),
+					new THREE.PointsMaterial( { color: 0x1a1a1a, size: 2, sizeAttenuation: false } ),
+
+					new THREE.PointsMaterial( { color: 0x1a1a1a, size: 1, sizeAttenuation: false } )
+				];
+
+				for ( let i = 10; i < 30; i ++ ) {
+
+					const stars = new THREE.Points( starsGeometry[ i % 2 ], starsMaterials[ i % 6 ] );
+
+					stars.rotation.x = Math.random() * 6;
+					stars.rotation.y = Math.random() * 6;
+					stars.rotation.z = Math.random() * 6;
+					stars.scale.setScalar( i * 10 );
+
+					stars.matrixAutoUpdate = false;
+					stars.updateMatrix();
+
+					scene.add( stars );
+
+				}
+
+//\stars
+		
+
+	let ambient = new THREE.AmbientLight(0x111111);
+	scene.add(ambient)
+	
+//Sun		
+
+	//var sun_geom = new THREE.SphereGeometry(2300, 50, 50, 0, Math.PI * 2, 0, Math.PI * 2);
+	let sun_geom = new THREE.SphereGeometry(2300, 800, 800)
+
+	let texture = new THREE.TextureLoader().load(
+		'./img/textures/sun.jpg'
+		//'https://cosmos-online.ru/wp-content/uploads/2018/10/8k_sun.jpg'
+		//'http://xnameetingpoint.weebly.com/uploads/7/4/1/2/7412327/2399293_orig.png'
+		//'https://i.imgur.com/WCenSFw.jpg'
+		//	'https://www.filterforge.com/filters/10089.jpg'
+		);
+	texture.anisotropy = 8;
+
+
+	const sun_mat = new THREE.MeshBasicMaterial({
+		map: texture,
+		//emissive: 0xffffff
+	})
+
+
+	let sun = new THREE.Mesh(sun_geom, sun_mat);
+
+
+	const haloVertexShader = /*glsl*/`
+varying vec3 vertexNormal;
+void main() {
+     vertexNormal = normal;
+     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);   
+}
+`;
+const haloFragmentShader = /*glsl*/`
+varying vec3 vertexNormal;
+void main() {
+float intensity = pow(0.9 - dot(vertexNormal, vec3(0, 0, 1.0)), 2.0);
+gl_FragColor = vec4(0.8, 1.0, 0.6, 0.2) * intensity;
+}
+`;
+const halo = new THREE.Mesh(
+     new THREE.SphereGeometry(2300, 800, 800),
+     new THREE.ShaderMaterial({
+          vertexShader:haloVertexShader,
+          fragmentShader:haloFragmentShader,
+          blending: THREE.AdditiveBlending,
+          side: THREE.BackSide
+     })
+)
+
+halo.scale.set(1.2, 1.2, 1.2);
+//scene.add(halo);	
+
+
+
+
+	scene.add(sun);
+
+
+
+//</Sun>
+
+//Mercury
+let mercury_geom = new THREE.SphereGeometry(40, 20, 20);
+
+let mercury_texture = new THREE.TextureLoader().load(
+	//'https://phonoteka.org/uploads/posts/2022-09/thumbs/1663099480_2-phonoteka-org-p-tekstura-merkuriya-pinterest-2.jpg'
+	'./img/textures/mercury.jpg'
+);
+
+mercury_texture.anisotropy = 8
+
+let mercury_mat = new THREE.MeshPhongMaterial({
+	map: mercury_texture
+});
+
+
+
+let mercury = new THREE.Mesh(mercury_geom, mercury_mat);
+mercury.castShadow = true;
+mercury.receiveShadow = true;
+scene.add(mercury);
+
+//
+
+
+//Venera
+let venera_geom = new THREE.SphereGeometry(70, 20, 20);
+
+
+let textureVen = new THREE.TextureLoader().load(
+	//'https://kartinkin.net/uploads/posts/2021-07/1627422862_21-kartinkin-com-p-tekstura-poverkhnosti-planet-krasivo-24.jpg'
+	'./img/textures/venera.jpg'
+	);
+
+
+textureVen.anisotropy = 8;
+
+let venera_mat = new THREE.MeshPhongMaterial({
+	map: textureVen
+});
+
+let venera = new THREE.Mesh(venera_geom, venera_mat)
+venera.castShadow = true;
+venera.receiveShadow = true;
+scene.add(venera);
+
+
+
+
+//Earth
+		let earth_geom = new THREE.SphereGeometry(80, 20, 30),
+		//	earth_mat = new THREE.MeshNormalMaterial();
+
+			thisT = new THREE.TextureLoader().load(
+				//'https://gamerwall.pro/uploads/posts/2021-11/1637037519_5-gamerwall-pro-p-tekstura-planeti-oboi-na-zastavku-5.jpg'
+				'./img/textures/earth.jpg'
+				);
+
+			thisT.anisotropy = 8
+
+
+			
+			earth_mat = new THREE.MeshPhongMaterial({
+				map: thisT
+				
+			})
+
+
+
+		let earth = new THREE.Mesh(earth_geom, earth_mat);
+		earth.position.x = 15000;
+		earth.castShadow = true;
+		earth.receiveShadow = true;
+
+		scene.add(earth);
+
+
+//Moon
+
+let moon_geom = new THREE.SphereGeometry(25, 20, 30),
+	moon_texture = new THREE.TextureLoader().load(
+		//'https://postila.ru/data/3c/d5/5e/1f/3cd55e1f677d390f3ea58756c7e660e2eb559221af021948c6db57f698265090.jpg'
+		'./img/textures/moon.jpg'
+		);
+	moon_texture.anisotropy = 8;
+
+	moon_mat = new THREE.MeshPhongMaterial({
+		//color: #ff
+		map: moon_texture
+	}),
+	moon = new THREE.Mesh(moon_geom, moon_mat);
+	scene.add(moon)
+
+
+		
+
+//Mars
+
+	
+		let mars_geom = new THREE.SphereGeometry(60, 20, 30),
+
+		//	mars_mat = new THREE.MeshNormalMaterial();
+
+			tex_m = new THREE.TextureLoader().load(
+				//'https://phonoteka.org/uploads/posts/2022-09/1663036482_2-phonoteka-org-p-tekstura-marsa-pinterest-2.jpg'
+				'./img/textures/mars.jpg'
+				);
+
+			tex_m.anisotropy = 8
+
+
+			
+			mars_mat = new THREE.MeshPhongMaterial({
+				//emissiveMap: thisT
+				map: tex_m
+			})
+
+		let mars = new THREE.Mesh(mars_geom, mars_mat);
+		mars.castShadow = true;	
+		mars.receiveShadow = true;
+
+		scene.add(mars);
+
+
+//Jupiter
+
+let jup_geom = new THREE.SphereGeometry(330, 100, 100);
+
+let tex_j = new THREE.TextureLoader().load(
+	//'https://www.solarsystemscope.com/textures/download/8k_jupiter.jpg'
+	//'https://textures.forrest.cz/textures/library/maps/Jupiter.jpg'
+	'./img/textures/Jupiter.jpg'
+	);
+
+ tex_j.anisotropy = 8;
+
+let jup_mat = new THREE.MeshPhongMaterial({
+	map: tex_j
+});
+
+let jupiter = new THREE.Mesh(jup_geom, jup_mat);
+jupiter.castShadow = true;
+//jupiter.receiveShadow = true;
+scene.add(jupiter)
+
+//
+
+
+
+//Saturn
+
+let saturn_geom = new THREE.SphereGeometry(210, 50, 50);
+
+let tex_s = new THREE.TextureLoader().load(
+	//'https://www.solarsystemscope.com/textures/download/8k_saturn.jpg'
+	//'https://static.wikia.nocookie.net/planet-texture-maps/images/6/61/Saturn.jpg/revision/latest?cb=20190416043829'
+	'./img/textures/Saturn.jpg'
+	);
+
+tex_s.anisotropy = 8;
+
+let sat_mat = new THREE.MeshPhongMaterial({
+	map: tex_s,
+	//shiness: 50,
+	//wireframe: false
+	//flatShading: true
+});
+
+let saturn = new THREE.Mesh(saturn_geom, sat_mat);
+saturn.castShadow = true;
+saturn.receiveShadow = true;
+scene.add(saturn)
+
+
+
+let sat_ring_geom = new THREE.BufferGeometry();
+
+let sat_ring_mat = new THREE.ParticleBasicMaterial({
+ 	color: 0x3A3A3A,
+	opacity: 0.3,
+	size:1,
+	sizeAttenuation: false
+});
+
+
+let vertices = [];
+
+for(let i = 0; i<20000; i++){
+	let vertex = new THREE.Vector3();
+	vertex.x = Math.sin(Math.PI/360*i)*(550-i/80);
+	vertex.y = Math.random()*20;
+	vertex.z = Math.cos(Math.PI/360*i)*(550-i/80);
+	vertices.push(vertex.x, vertex.y, vertex.z)
+}
+
+	sat_ring_geom.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3))
+
+
+let ring = new THREE.Points(sat_ring_geom, sat_ring_mat);
+ring.castShadow = true;
+scene.add(ring)
+
+
+//Uran
+
+
+let uran_geom = new THREE.SphereGeometry(140, 20, 20);
+
+let tex_u = new THREE.TextureLoader().load(
+	//'https://kartinkin.net/uploads/posts/2021-07/1627112608_1-kartinkin-com-p-tekstura-planeti-uran-krasivo-1.jpg'
+	'./img/textures/uran.jpg'
+	);
+
+tex_u.anisotropy = 8;
+
+let uran_mat = new THREE.MeshPhongMaterial({
+	map: tex_u
+});
+
+let uran = new THREE.Mesh(uran_geom, uran_mat);
+uran.castShadow = true;
+uran.receiveShadow = true;
+
+scene.add(uran)
+
+
+//Neptun
+
+
+let neptun_geom = new THREE.SphereGeometry(130, 20, 20);
+
+let tex_n = new THREE.TextureLoader().load(
+	//'https://kartinkin.net/uploads/posts/2021-07/1627112608_1-kartinkin-com-p-tekstura-planeti-uran-krasivo-1.jpg'
+	//'https://upload.wikimedia.org/wikipedia/commons/1/1e/Solarsystemscope_texture_2k_neptune.jpg'
+	'./img/textures/neptune.jpg'
+	);
+
+tex_u.anisotropy = 8;
+
+let neptun_mat = new THREE.MeshPhongMaterial({
+	map: tex_n
+});
+
+let neptun = new THREE.Mesh(neptun_geom, neptun_mat);
+neptun.castShadow = true;
+neptun.receiveShadow = true;
+
+scene.add(neptun)
+
+
+
+
+		let t = 0;
+
+
+		// camera.position.z = 200000;
+		// camera.rotation.z = - Math.PI/20;
+	//	camera.position.y = 5000;
+		
+	//let controlsaz = new THREE.OrbitControls(camera, render.domElement )
+	// let controls = new THREE.OrbitControls(camera, render.domElement );
+	// 	controls.domElement = render.domElement;
+	// 	controls.movementSpeed = 20000;
+	// 	controls.lookSpeed = 1.6;
+
+
+	// 	//let controls = new THREE.OrbitControls(camera, render.domElement)
+	// 	//let controls = new THREE.OrbitControls(camera)
+		
+	// 	 // controls.movementSpeed = 200000;
+	// 	 // controls.lookSpeed = 0.05;
+
+	// //	 controls = new FlyControls( camera, renderer.domElement );
+
+	// 			controls.movementSpeed = 1000;
+	// 			//controls.domElement = renderer.domElement;
+	// 			controls.rollSpeed = Math.PI / 24;
+	// 			controls.autoForward = false;
+	// 			controls.dragToLook = false;
+
+
+
+
+// 		function animate(){
+// 			requestAnimationFrame(animate);
+// //			controls.update(0.0001)
+			
+// //sun
+// 			sun.rotation.y += 0.001;
+// 				mercury.rotation.y += 0.03;
+// 				venera.rotation.y += 0.01;
+// 				earth.rotation.y += 0.01;
+// 				mars.rotation.y += 0.01;
+// 				jupiter.rotation.y += 0.01;
+			
+// 					saturn.rotation.y += 0.01;
+// 					ring.rotation.y -= 0.001;
+// 				uran.rotation.y += 0.01;
+// 				neptun.rotation.y += 0.01;
+
+
+// //Mercury
+// 		mercury.position.x = Math.sin(t*0.3)*8000;
+// 		mercury.position.z = Math.cos(t*0.3)*8000;
+
+
+// //Venera
+
+//   	  venera.position.x = Math.sin(t*0.2)*17000;
+// 		venera.position.z = Math.cos(t*0.2)*17000;
+
+
+// //earth
+// 			earth.position.x = Math.sin(t*0.1)*30000;
+// 			 earth.position.z = Math.cos(t*0.1)*30000;
+
+
+// //Mars
+//   		mars.position.x = Math.sin(t*0.08)*50000;
+// 			mars.position.z = Math.cos(t*0.08)*50000;
+
+// //Jupiter
+
+// 			jupiter.position.x = Math.sin(t*0.10)*(-74700);
+// 			jupiter.position.z = Math.cos(t*0.10)*(-74700);
+
+// //Saturn
+// 			saturn.position.x = Math.sin(t*0.05)*98000;
+// 			saturn.position.z = Math.cos(t*0.05)*98000;
+
+				
+// 			ring.position.x = saturn.position.x;
+// 			ring.position.z = saturn.position.z
+
+
+
+// 			// camera.position.x = saturn.position.x;
+// 			// camera.position.z = saturn.position.z+1000;
+// 			// //camera.lookAt(saturn.position)
+
+
+// // //Uran
+// 			uran.position.x = Math.sin(t*0.03)*120000;
+// 			uran.position.z = Math.cos(t*0.01)*120000;
+
+// //Neptun
+
+// 			neptun.position.x = Math.sin(t*0.08)*180000;
+// 			neptun.position.z = Math.cos(t*0.08)*180000;
+
+
+// // // // //camera
+// // 			  camera.position.z = neptun.position.z+200;
+// // 			  camera.lookAt(neptun.position);
+			  
+
+// 			 //  	scene.rotation.x = mouseX * 0.0005;
+// 				// scene.rotation.y = mouseY * 0.0005;
+	
+
+
+// 			t += Math.PI/180*2*0.1;
+// 			render.render(scene, camera);
+// 		}
+	
+//    animate();
+// 		container.appendChild(render.domElement);
+
+
+		
+		camera.position.z = 20300;
+		camera.rotation.z = - Math.PI/20;
+		//camera.position.y = -5000;
+		function animate(){
+			requestAnimationFrame(animate);
+
+//Rotating
+			sun.rotation.y += 0.001;
+				mercury.rotation.y += 0.01;
+				venera.rotation.y += 0.01;
+				earth.rotation.y += 0.02;
+				mars.rotation.y += 0.02;
+				jupiter.rotation.y += 0.03;
+				saturn.rotation.y += 0.04;
+				ring.rotation.y -= 	0.01;
+				uran.rotation.y += 0.06;
+				neptun.rotation.y += 0.07;
+if(moving === true){
+
+//Mercury
+	if(movingMercury === true){
+		mercury.position.x = Math.sin(t*0.03)*5000;
+		mercury.position.z = Math.cos(t*0.03)*5000;
+}
+		//		mercury.position.x = 4000;
+
+
+//Venera
+if(movingVenera === true){
+	  venera.position.x = Math.sin(t*0.02)*6500;
+		venera.position.z = Math.cos(t*0.02)*6500;
+}
+//			venera.position.x = 5500;
+
+// //earth
+if(movingEarth === true){
+			earth.position.x = Math.sin(t*0.01)*9500;
+			 earth.position.z = Math.cos(t*0.01)*9500;
+}
+//moon
+			
+			moon.position.x = Math.sin(earth.rotation.y)*500;
+			 moon.position.z = Math.cos(earth.rotation.y)*500;
+
+			 moon.position.z += earth.position.z;
+			 moon.position.x += earth.position.x;
+			 // moon.position.z = earth.position.z;
+			 // moon.position.x = earth.position.x;
+			  
+			
+
+
+//Mars
+if(movingMars === true){
+  		mars.position.x = Math.sin(t*0.08)*10500;
+		mars.position.z = Math.cos(t*0.08)*10500;
+}
+//			mars.position.x = 8500;	
+//Jupiter
+if(movingJupiter === true){
+			jupiter.position.x = Math.sin(t*0.06)*14500;
+			jupiter.position.z = Math.cos(t*0.06)*14500;
+//			jupiter.position.x = 11500;	
+}
+// //Saturn
+if(movingSaturn === true){
+			saturn.position.x = Math.sin(t*0.04)*16000;
+			saturn.position.z = Math.cos(t*0.04)*16000;
+}
+//				saturn.position.x = 13000;
+
+			ring.position.x = saturn.position.x;
+			ring.position.z = saturn.position.z
+
+
+// //Uran
+if(movingUran === true){
+			uran.position.x = Math.sin(t*0.02)*17000;
+			uran.position.z = Math.cos(t*0.02)*17000;
+//				 uran.position.x = 14000;
+}
+///Neptun
+if(movingNeptun === true){
+			neptun.position.x = Math.sin(t*0.01)*20800;
+			neptun.position.z = Math.cos(t*0.01)*20800;
+}
+//				neptun.position.x = 14800;
+}
+// // //camera
+			  // camera.position.z = mercury.position.z;
+			  // camera.lookAt(mercury.position);
+			  
+
+			  // 	scene.rotation.x = mouseX * 0.0005;
+					// scene.rotation.y = mouseY * 0.0005;
+	
+
+
+			t += Math.PI/180*2;
+			render.render(scene, camera);
+		}
+	
+   animate();
+		container.appendChild(render.domElement);
+//Buttons-top
+
+const sol = document.getElementById('solar');
+
+sol.addEventListener('click', function(){
+	//camera.position.z = 20300;
+})
+
+// function anythingcam(){
+// 	 camera.position.z = earth.position.z;
+// 	 camera.lookAt(earth.position);
+
+// }
+
+// anythingcam();
+//sunClick
+const sunButton = document.getElementById('sun')
+
+sunButton.addEventListener('click', function(){
+	sunRise = true;
+	//moving = false;
+	//camera.position.z = sun.position.z+9000;
+	
+})
+
+//mercClick
+
+const mercButton = document.getElementById('mercury');
+
+//venClick
+const venButton = document.getElementById('venera');
+
+//earthClick
+const earthButton = document.getElementById('earth');
+
+//marsClick
+const marsButton = document.getElementById('mars');
+
+//jupClick
+const jupButton = document.getElementById('jupiter');
+
+//satClick
+const satButton = document.getElementById('saturn');
+
+//urClick
+const urButton = document.getElementById('uran')
+
+//nepClick
+const nepButton = document.getElementById('neptun')
+
+//
+
+
+const tajik = document.getElementById('tajik');
+let tajikLang = false;
+const russian = document.getElementById('russian');
+let russianLang = true;
+const english = document.getElementById('english');
+let englishLang = false;
+const languages = document.querySelector('.languages');
+
+
+
+let moreInformation = document.createElement('button');
+moreInformation.innerText = 'Больше информации';
+moreInformation.id = 'more-information';
+
+let short = true, long = false;
+
+
+function doNothing(){
+	//Nothing...
+}
+
+let anylang = true;
+
+	</script>
+<script src="./informationToo.js"></script>
+<script src="./buttonLanguageClick.js"></script>
+<script src="./j.js" ></script>
+<script src="./information.js"></script>
+<script src="./languages/language_Button.js"></script>
+<script src="./languages.js"></script>
+
+</body>
+</html>
+
+
