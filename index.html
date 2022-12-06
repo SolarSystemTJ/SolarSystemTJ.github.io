@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Solar System</title>
-	<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+	<title>test</title>
+
 	<style type="text/css">
 
 	::-webkit-scrollbar {
@@ -88,6 +88,7 @@
 			box-shadow: 0px 0px 10px 2px rgb(0, 10, 79);	
 		}
 
+
 		button:hover, input:hover{
 			background-color: rgb(0, 0, 9);
 			border-color: rgb(121, 204, 253);
@@ -107,19 +108,6 @@
 		position: relative;
 		width: 50px;
 		height: 35px;
-	}
-
-	#info {
-		margin: 2px;
-	/*	border-color: rgb(64, 182, 253);*/
-		border: none;
-		float: right;
-		position: relative;
-		width: 40px;
-		height: 40px;
-		background-image: url(./img/info.png);
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
 	}
 
 	#tajik{
@@ -145,6 +133,72 @@
 	#english{
 
 	}
+
+	#editor{
+		width: 50px;
+
+	}
+
+	.modal{
+		/*display: none;*/
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+ 	align-items: center;
+ 	justify-content: center;
+	}
+
+	 .modal .overlay{
+ 	position: absolute;
+ 	top: 0;
+ 	left: 0;
+ 	width: 100%;
+ 	height: 100%;
+ 	background-color: black;
+ 	opacity: 0.7;
+ }
+
+ 	 .modal-window{
+
+ 	 	border: solid;
+ 	color: white;
+ 	position: relative;
+ 	z-index: 2;
+ 	width: 250px;
+ 	height: 50px;
+ 	background-color: black;
+ 	border-radius: 10px;
+ 	border-color: rgb(64, 182, 253);
+ 	box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
+ 	text-align: center;
+ 	padding: 200px;
+ }
+
+
+ 	#close{
+ 		/*border: 0;*/
+ 		
+ 		color: white;
+ 		width: 50px;
+ 	}
+
+ 	.modal{
+ 		display: none;
+ 	}
+
+ 	#modal-h1{
+ 		position: relative;
+ 		top: -20px
+ 	}
+
+ 	.modal-text{
+ 		position: relative;
+ 		widows: 200px;
+ 		top: -100px;
+ 	}
 
 	</style>
 
@@ -173,6 +227,28 @@
  	</div>
  -->
 
+ 	<div class="modal">
+ 		<div class="modal-window">
+ 			<span class="modal-text">
+ 				<h1 id="modal-h1">Создатели</h1>
+ 				<span>
+ 				<p>Разработчик: Мирзоев Парвиз</p>
+ 					<!-- <br> -->
+ 				<!-- <p>Dev-Ops: Авазбек Эшмуродов</p> -->
+ 				<!-- 	<br> -->
+ 				<p>	Благодарности: Хочу поблагодарить мою семью, отдельное благодарность радителям,  Alif academy и моим друзьям, они очень помогли мне в обучении нового для меня инструмента. 
+
+ 				</p>
+ 				</span>
+
+ 			</span>
+ 			<button id="close">X</button>
+ 		</div>
+
+ 		<div class="overlay"></div>
+
+ 	</div>
+
  	<div class="line" style="">
  		<!-- <button id="sun">Офтоб</button> -->
  		<button id="solar">Главная</button>
@@ -186,11 +262,11 @@
  		<button id="saturn">Сатурн</button>
  		<button id="uran">Уран</button>
  		<button id="neptun">Нептун</button>
- 		<a href="https://avazbekhub.github.io/" style="display: none"><button id="info"></button></a>
+ 		
+ 		<button class="languages" id="editor">i</button>
  		<button class="languages" id="english"></button>
  		<button class="languages" id="russian"></button>
  		<button class="languages" id="tajik"></button>
- 		
  	
  <!-- 		 <img src="./img/usa.png" class="languages" id="english">
 
@@ -211,6 +287,7 @@
  	</div>
 
 	
+	<script src="./modal.js"></script>
 
 	<script>
 
