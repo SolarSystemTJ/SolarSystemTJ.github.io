@@ -35,10 +35,7 @@ let ring_mat = new THREE.ParticleBasicMaterial({
 	sizeAttenuation: false
 });
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 446947d (Start 2.0.1)
 let ring_geom = new THREE.BufferGeometry();
 
 let veritices = [];
@@ -55,10 +52,6 @@ for(let i = 0; i<20000; i++){
 
 let sat_ring = new THREE.Points(ring_geom, ring_mat);
 	
-<<<<<<< HEAD
-	sat_ring.castShadow = true;
-
-=======
 sat_ring.rotation.x = -0.3;
 	sat_ring.castShadow = true;
 
@@ -106,7 +99,6 @@ for(let i = 0; i<5000; i++){
 	
 	
 
->>>>>>> 446947d (Start 2.0.1)
 
 
 //Another buttons
@@ -115,16 +107,10 @@ for(let i = 0; i<5000; i++){
 
 
 	let texturing;
-<<<<<<< HEAD
-
-//Solar
-sol.addEventListener('click', function(){
-=======
 thisScene.remove(thisUrRing);
 //Solar
 sol.addEventListener('click', function(){
 thisScene.remove(thisUrRing);	
->>>>>>> 446947d (Start 2.0.1)
 	perem.play();
 	 // texturing	= new THREE.TextureLoader().load(
   // 	'http://xnameetingpoint.weebly.com/uploads/7/4/1/2/7412327/2399293_orig.png'
@@ -134,12 +120,8 @@ thisScene.remove(thisUrRing);
 	});
 	let cube = new THREE.Mesh(cube_g, cube_m);
 	thisScene.add(cube)
-<<<<<<< HEAD
-
-=======
 	thisScene.remove(thiscloudMesh);
 	thisScene.remove(thisUrRing)
->>>>>>> 446947d (Start 2.0.1)
 	thisScene.remove(sat_ring)
 	risingSun = false;
 	rising = true;
@@ -167,14 +149,9 @@ thisScene.remove(thisUrRing);
 let cube_g = new THREE.SphereGeometry(250, 100, 100);
 
 sunButton.addEventListener('click', function(){
-<<<<<<< HEAD
-
-	thisScene.remove(sat_ring)
-=======
 	thisScene.remove(thiscloudMesh);
 	thisScene.remove(sat_ring)
 	thisScene.remove(thisUrRing)
->>>>>>> 446947d (Start 2.0.1)
 let moving = true;
 	 movingMercury = true;
 	 movingVenera = true;
@@ -214,11 +191,8 @@ let moving = true;
 //mercury
 mercButton.addEventListener('click', function(){	
 	thisScene.remove(sat_ring)
-<<<<<<< HEAD
-=======
 	thisScene.remove(thiscloudMesh);
 	thisScene.remove(thisUrRing)
->>>>>>> 446947d (Start 2.0.1)
 	 movingMercury = false;
 	 movingVenera = true;
 	 movingEarth = true;
@@ -260,11 +234,8 @@ mercButton.addEventListener('click', function(){
 
 venButton.addEventListener('click', function(){
 	thisScene.remove(sat_ring)
-<<<<<<< HEAD
-=======
 	thisScene.remove(thiscloudMesh);
 	thisScene.remove(thisUrRing)
->>>>>>> 446947d (Start 2.0.1)
 	 movingMercury = true;
 	 movingVenera =  false;
 	 movingEarth = true;
@@ -304,12 +275,9 @@ venButton.addEventListener('click', function(){
 //Earth
 	 earthButton.addEventListener('click', function(){
 	 	thisScene.remove(sat_ring)
-<<<<<<< HEAD
-=======
 	 	cloud = true;
 	 	thisScene.add(thiscloudMesh);
 	 	thisScene.remove(thisUrRing);
->>>>>>> 446947d (Start 2.0.1)
 	 	movingMercury = true;
 	 movingVenera =  true;
 	 movingEarth = true;
@@ -332,15 +300,6 @@ venButton.addEventListener('click', function(){
 	risingNep = false;
 
 
-<<<<<<< HEAD
-	 texturing	= new THREE.TextureLoader().load(
-	 	//'https://kartinkin.net/uploads/posts/2021-07/1627422862_21-kartinkin-com-p-tekstura-poverkhnosti-planet-krasivo-24.jpg'
-	 	//'https://gamerwall.pro/uploads/posts/2021-11/1637037519_5-gamerwall-pro-p-tekstura-planeti-oboi-na-zastavku-5.jpg'
-	 	'./img/textures/earth.jpg'
-	 	)
-	let cube_m = new THREE.MeshBasicMaterial({
-		map: texturing
-=======
 
 
 	 texturing	= new THREE.TextureLoader().load(
@@ -353,7 +312,6 @@ venButton.addEventListener('click', function(){
 		map: texturing,
 		// bumpMap: THREE.ImageUtils.loadTexture('./img/textures/earth_atmos_2048.jpg'),
 		bumpScale : 10
->>>>>>> 446947d (Start 2.0.1)
 	});
 	let cube = new THREE.Mesh(cube_g, cube_m);
 	thisScene.add(cube)
@@ -367,11 +325,8 @@ venButton.addEventListener('click', function(){
 //Mars
 	 marsButton.addEventListener('click', function(){
 	 	thisScene.remove(sat_ring)
-<<<<<<< HEAD
-=======
 	 	thisScene.remove(thiscloudMesh);
 	 	thisScene.remove(thisUrRing);
->>>>>>> 446947d (Start 2.0.1)
 	 	movingMercury = true;
 	 movingVenera =  true;
 	 movingEarth = true;
@@ -410,11 +365,8 @@ venButton.addEventListener('click', function(){
 //Jupiter
  jupButton.addEventListener('click', function(){
  	thisScene.remove(sat_ring)
-<<<<<<< HEAD
-=======
  	thisScene.remove(thiscloudMesh);
  	thisScene.remove(thisUrRing);
->>>>>>> 446947d (Start 2.0.1)
 	 	movingMercury = true;
 	 movingVenera =  true;
 	 movingEarth = true;
@@ -456,11 +408,8 @@ venButton.addEventListener('click', function(){
 
 //scene.add(ring)
 	satButton.addEventListener('click', function(){
-<<<<<<< HEAD
-=======
 		thisScene.remove(thiscloudMesh);
 		thisScene.remove(thisUrRing);
->>>>>>> 446947d (Start 2.0.1)
 	 	movingMercury = true;
 	 movingVenera =  true;
 	 movingEarth = true;
@@ -508,11 +457,8 @@ venButton.addEventListener('click', function(){
 
 //Uran
 	urButton.addEventListener('click', function(){
-<<<<<<< HEAD
-=======
 		thisScene.remove(thiscloudMesh);
 		thisScene.add(thisUrRing);
->>>>>>> 446947d (Start 2.0.1)
 		thisScene.remove(sat_ring)
 	 movingMercury = true;
 	 movingVenera =  true;
@@ -536,12 +482,9 @@ venButton.addEventListener('click', function(){
 	risingNep = false;
 
 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 446947d (Start 2.0.1)
 	 texturing	= new THREE.TextureLoader().load(
 	 	//'https://kartinkin.net/uploads/posts/2021-07/1627112608_1-kartinkin-com-p-tekstura-planeti-uran-krasivo-1.jpg'
 		'./img/textures/uran.jpg'
@@ -564,11 +507,8 @@ venButton.addEventListener('click', function(){
 	
 	nepButton.addEventListener('click', function(){
 		thisScene.remove(sat_ring)
-<<<<<<< HEAD
-=======
 		thisScene.remove(thisUrRing);
 		thisScene.remove(thiscloudMesh);
->>>>>>> 446947d (Start 2.0.1)
 	 movingMercury = true;
 	 movingVenera =  true;
 	 movingEarth = true;
@@ -613,19 +553,12 @@ venButton.addEventListener('click', function(){
 
 
 		thisCamera.position.z = 1000;
-<<<<<<< HEAD
-		console.log(thisCamera.position.x)
-=======
->>>>>>> 446947d (Start 2.0.1)
 let controls = new THREE.OrbitControls(thisCamera, renderer.domElement );
 
 	
 		thisAnimate();
 	function thisAnimate(){
-<<<<<<< HEAD
-=======
 		
->>>>>>> 446947d (Start 2.0.1)
 		//sun
 		if(risingSun === true){ 
 		if(camera.position.z > sun.position.z+8000){
@@ -737,12 +670,8 @@ let controls = new THREE.OrbitControls(thisCamera, renderer.domElement );
 	//earth
 	if(risingEarth === true){
 		movingEarth = false;
-<<<<<<< HEAD
-
-=======
 		thiscloudMesh.rotation.y += 0.001;
 		// thiscloudMesh.rotation.z += 0.001;
->>>>>>> 446947d (Start 2.0.1)
 		// if(camera.position.z > earth.position.z-600){
 		// //camera.position.z = mercury.position.z+100;
 		// camera.position.z -= 80;
