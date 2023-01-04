@@ -3,7 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 	<title>Solar System</title>
+=======
+	<title>test</title>
+>>>>>>> 446947d (Start 2.0.1)
 
 	<style type="text/css">
 
@@ -135,6 +139,7 @@
 	}
 
 	#editor{
+<<<<<<< HEAD
 		margin: 2px;
 		border: none;
 		float: right;
@@ -144,6 +149,10 @@
 		background-image: url(./img/info.png);
 		background-repeat: no-repeat;
 		background-size: 100% 100%;
+=======
+		width: 50px;
+
+>>>>>>> 446947d (Start 2.0.1)
 	}
 
 	.modal{
@@ -206,6 +215,7 @@
  		widows: 200px;
  		top: -100px;
  	}
+<<<<<<< HEAD
 		
 	a{
  		text-decoration: none;
@@ -223,6 +233,28 @@
 <script src="./glowing-sun-master/public/index.js"></script>
 <script src="./Three_JS_Main_Lib.js"></script>
 <script src="./public/llib.js"></script>
+=======
+
+ 	a{
+ 		text-decoration: none;
+ 		color:  white;
+ 	}
+
+/* 	.bar, .line{
+ 		display: none;
+ 	}
+
+	</style>
+
+	 <link rel="shortcut icon" href="./img/icon.png" type="image/x-icon">
+
+</head>
+
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r127/three.min.js"></script> -->
+<script src="./Three_JS_Main_Lib.js"></script>
+<script src="./public/llib.js"></script>
+<script src="./main.js"></script>
+>>>>>>> 446947d (Start 2.0.1)
  <!-- 	
  	<script src="./public/llib.js"></script>
 
@@ -246,6 +278,7 @@
  		<div class="modal-window">
  			<span class="modal-text">
  				<h1 id="modal-h1">Создатели</h1>
+<<<<<<< HEAD
  				<span>
  				<p>Разработчик: Мирзоев Парвиз</p>
  					<!-- <br> -->
@@ -254,6 +287,14 @@
  				<p>	Благодарности: Хочу поблагодарить мою семью, отдельное благодарность радителям  и моим друзьям, они очень помогли мне в обучении нового для меня инструмента. 
 
  				</p>
+=======
+ 				<span id="moddal-text">
+ 				<p id="dev-main">Разработчик: Мирзоев Парвиз</p>
+ 					<!-- <br> -->
+ 				<p id="dev-op">Dev-Ops:<a href="https://avazbekhub.github.io/#"> Авазбек Эшмуродов</a></p>
+ 					<!-- <br> -->
+ 				<p id="thank">	Благодарности: Хочу поблагодарить мою семью, отдельное благодарность радителям и моим друзьям, они очень помогли мне в обучении нового для меня инструмента.</p>
+>>>>>>> 446947d (Start 2.0.1)
  				</span>
 
  			</span>
@@ -278,6 +319,7 @@
  		<button id="uran">Уран</button>
  		<button id="neptun">Нептун</button>
  		
+<<<<<<< HEAD
  		<button class="languages" id="editor"></button>
  		<button class="languages" id="english"></button>
  		<button class="languages" id="russian"></button>
@@ -293,6 +335,13 @@
 
  		<img src="./img/tajik.png" class="languages" id="tajik">
  -->
+=======
+ 		<button class="languages" id="editor">i</button>
+ 		<button class="languages" id="english"></button>
+ 		<button class="languages" id="russian"></button>
+ 		<button class="languages" id="tajik"></button>
+
+>>>>>>> 446947d (Start 2.0.1)
  	</div>
 
  	<div class="bar" style="">
@@ -301,11 +350,18 @@
 </div>
  	</div>
 
+<<<<<<< HEAD
 	
 	<script src="./modal.js"></script>
 
 	<script>
 
+=======
+
+
+	<script>
+	 const line = document.querySelector('.line');	
+>>>>>>> 446947d (Start 2.0.1)
 	 //import { RenderPass } from "https://threejs.org/examples/js/postprocessing/RenderPass.js";	
 
 	let music = new Audio('./audio/relaxing-music-vol1-124477.mp3');
@@ -326,6 +382,7 @@
 	let movingSaturn = true;
 	let movingUran = true;
 	let movingNeptun = true;
+<<<<<<< HEAD
 //
 		//let H = window.innerHeight, W = window.innerWidth;
 		//	let H = clientHeight, W = clientWidth;
@@ -334,6 +391,17 @@
 
 		//Сцена и Камера
 		const scene = new THREE.Scene();
+=======
+	// console.log(document.body.clientWidth);
+//
+		// let H = window.innerHeight-80, W = window.innerWidth-350;
+			let H = (document.body.clientHeight)-70, W = (document.body.clientWidth)-365;
+		// let H = 600, W = 100;
+		// let H = (window.innerHeight) - 70, W = 980;
+		// console.log(`${window.innerHeight} \n ${window.innerWidth}`)
+		//Сцена и Камера
+		const scene = new THREE.Scene;
+>>>>>>> 446947d (Start 2.0.1)
 		const camera = new THREE.PerspectiveCamera(45, W/H, 1, 10000000);
 		const container = document.createElement('div');
 
@@ -349,17 +417,27 @@
 		// render.shadowMap.enabled = true;
 		// render.shadowMap.type = THREE.BasicShadowMap;
 
+<<<<<<< HEAD
 		let light = new THREE.PointLight(0xffffff, 1, 200000);
 		//light.position.set(10, 10, 50000);
 		// light.position = 0
 		//light.castSahdow = true;
 		light.shadow.mapSize.width = 1024;
 		light.shadow.mapSize.height = 1024;
+=======
+		let light = new THREE.PointLight(0xffffff, 1, 50000);
+		//light.position.set(10, 10, 50000);
+		// light.position = 0
+		//light.castSahdow = true;
+		light.shadow.mapSize.width = 2048;
+		light.shadow.mapSize.height = 2048;
+>>>>>>> 446947d (Start 2.0.1)
 		light.shadow.camera.near = 0.1;
 		light.shadow.camera.far = 25;
 		scene.add(light);
 
 
+<<<<<<< HEAD
 
 
 
@@ -434,6 +512,16 @@
 // bloomComposer.addPass(renderScene);
 // bloomComposer.addPass(bloomPass);
 
+=======
+		window.addEventListener('resize', owWindowResize);
+
+		function owWindowResize(){
+			camera.aspect = ((document.body.clientWidth)-365) / ((document.body.clientHeight)-70);
+			camera.updateProjectionMatrix();
+
+			render.setSize(((document.body.clientWidth)-365), ((document.body.clientHeight)-70));
+		}
+>>>>>>> 446947d (Start 2.0.1)
 
 //Stars
 				let radius = 6371;
@@ -572,7 +660,14 @@ let mercury_texture = new THREE.TextureLoader().load(
 mercury_texture.anisotropy = 8
 
 let mercury_mat = new THREE.MeshPhongMaterial({
+<<<<<<< HEAD
 	map: mercury_texture
+=======
+	map: mercury_texture,
+	bumpMap: THREE.ImageUtils.loadTexture('./img/textures/mercury.jpg'),
+	// bumpMap: THREE.ImageUtils.loadTexture('./img/textures/earth_clouds_2048.png'),
+	bumpScale : 3
+>>>>>>> 446947d (Start 2.0.1)
 });
 
 
@@ -598,7 +693,14 @@ let textureVen = new THREE.TextureLoader().load(
 textureVen.anisotropy = 8;
 
 let venera_mat = new THREE.MeshPhongMaterial({
+<<<<<<< HEAD
 	map: textureVen
+=======
+	map: textureVen,
+	bumpMap: THREE.ImageUtils.loadTexture('./img/textures/venera.jpg'),
+	// bumpMap: THREE.ImageUtils.loadTexture('./img/textures/earth_clouds_2048.png'),
+	bumpScale : 3
+>>>>>>> 446947d (Start 2.0.1)
 });
 
 let venera = new THREE.Mesh(venera_geom, venera_mat)
@@ -615,7 +717,12 @@ scene.add(venera);
 
 			thisT = new THREE.TextureLoader().load(
 				//'https://gamerwall.pro/uploads/posts/2021-11/1637037519_5-gamerwall-pro-p-tekstura-planeti-oboi-na-zastavku-5.jpg'
+<<<<<<< HEAD
 				'./img/textures/earth.jpg'
+=======
+				// './img/textures/earth.jpg'
+				'./img/textures/earth_atmos_4096.jpg'
+>>>>>>> 446947d (Start 2.0.1)
 				);
 
 			thisT.anisotropy = 8
@@ -623,8 +730,15 @@ scene.add(venera);
 
 			
 			earth_mat = new THREE.MeshPhongMaterial({
+<<<<<<< HEAD
 				map: thisT
 				
+=======
+				map: thisT,
+				bumpMap: THREE.ImageUtils.loadTexture('./img/textures/earth_atmos_2048.jpg'),
+				// bumpMap: THREE.ImageUtils.loadTexture('./img/textures/earth_clouds_2048.png'),
+				bumpScale : 10
+>>>>>>> 446947d (Start 2.0.1)
 			})
 
 
@@ -637,8 +751,33 @@ scene.add(venera);
 		scene.add(earth);
 
 
+<<<<<<< HEAD
 //Moon
 
+=======
+
+			// cloud Geometry
+	const cloudGeometry = new THREE.SphereGeometry(81, 32, 32);
+
+// cloud metarial
+	const cloudMetarial = new THREE.MeshPhongMaterial({
+    	map: THREE.ImageUtils.loadTexture('./img/textures/earth_clouds_2048.png'),
+    	transparent: true,
+});
+
+// cloud mesh
+	const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMetarial);
+
+	
+	scene.add(cloudMesh);
+	// earth.add(cloudMesh)
+
+
+
+
+//Moon
+	
+>>>>>>> 446947d (Start 2.0.1)
 let moon_geom = new THREE.SphereGeometry(25, 20, 30),
 	moon_texture = new THREE.TextureLoader().load(
 		//'https://postila.ru/data/3c/d5/5e/1f/3cd55e1f677d390f3ea58756c7e660e2eb559221af021948c6db57f698265090.jpg'
@@ -648,7 +787,14 @@ let moon_geom = new THREE.SphereGeometry(25, 20, 30),
 
 	moon_mat = new THREE.MeshPhongMaterial({
 		//color: #ff
+<<<<<<< HEAD
 		map: moon_texture
+=======
+		map: moon_texture,
+		bumpMap: THREE.ImageUtils.loadTexture('./img/textures/moon.jpg'),
+		// bumpMap: THREE.ImageUtils.loadTexture('./img/textures/earth_clouds_2048.png'),
+		bumpScale : 3
+>>>>>>> 446947d (Start 2.0.1)
 	}),
 	moon = new THREE.Mesh(moon_geom, moon_mat);
 	scene.add(moon)
@@ -674,7 +820,14 @@ let moon_geom = new THREE.SphereGeometry(25, 20, 30),
 			
 			mars_mat = new THREE.MeshPhongMaterial({
 				//emissiveMap: thisT
+<<<<<<< HEAD
 				map: tex_m
+=======
+				map: tex_m,
+			bumpMap: THREE.ImageUtils.loadTexture('./img/textures/mars.jpg'),
+			// bumpMap: THREE.ImageUtils.loadTexture('./img/textures/earth_clouds_2048.png'),
+			bumpScale : 5
+>>>>>>> 446947d (Start 2.0.1)
 			})
 
 		let mars = new THREE.Mesh(mars_geom, mars_mat);
@@ -763,6 +916,35 @@ ring.castShadow = true;
 scene.add(ring)
 
 
+<<<<<<< HEAD
+=======
+//Uran Rings
+let ur_ring_mat = new THREE.ParticleBasicMaterial({
+ 	color: 0x323232,
+	opacity: 0.3,
+	size:1,
+	sizeAttenuation: false
+});
+
+let ur_ring_geom = new THREE.BufferGeometry();
+
+let vertic = [];
+
+for(let i = 0; i<5000; i++){
+	let vertex = new THREE.Vector3();
+	vertex.x = Math.sin(Math.PI/360*i)*(350-i/80);
+	vertex.y = Math.random()*20;
+	vertex.z = Math.cos(Math.PI/360*i)*(350-i/80);
+	vertic.push(vertex.x, vertex.y, vertex.z)
+}
+
+	ur_ring_geom.setAttribute('position', new THREE.Float32BufferAttribute(vertic, 3))
+
+let ur_ring = new THREE.Points(ur_ring_geom, ur_ring_mat);
+ur_ring.castShadow = true;
+scene.add(ur_ring)
+
+>>>>>>> 446947d (Start 2.0.1)
 //Uran
 
 
@@ -800,7 +982,11 @@ let tex_n = new THREE.TextureLoader().load(
 tex_u.anisotropy = 8;
 
 let neptun_mat = new THREE.MeshPhongMaterial({
+<<<<<<< HEAD
 	map: tex_n
+=======
+	map: tex_n,
+>>>>>>> 446947d (Start 2.0.1)
 });
 
 let neptun = new THREE.Mesh(neptun_geom, neptun_mat);
@@ -809,9 +995,18 @@ neptun.receiveShadow = true;
 
 scene.add(neptun)
 
+<<<<<<< HEAD
 
 
 
+=======
+// earth.rotation.z = -0.5;
+// ring.rotation.z =  -0.1;
+ring.rotation.x = -0.3;
+ur_ring.rotation.z = 2.5;
+ur_ring.rotation.x  = 1.5;
+// ur_ring.rotation.y = 1;
+>>>>>>> 446947d (Start 2.0.1)
 		let t = 0;
 
 
@@ -936,15 +1131,32 @@ scene.add(neptun)
 		function animate(){
 			requestAnimationFrame(animate);
 
+<<<<<<< HEAD
 //Rotating
 			sun.rotation.y += 0.001;
 				mercury.rotation.y += 0.01;
 				venera.rotation.y += 0.01;
 				earth.rotation.y += 0.02;
+=======
+
+//Rotating
+				sun.rotation.y += 0.001;
+				mercury.rotation.y += 0.01;
+				venera.rotation.y += 0.01;
+				earth.rotation.y += 0.002;
+				// earth.rotation.x += 0.002;
+				cloudMesh.rotation.y += 0.004;
+				// cloudMesh.rotation.z += 0.001;
+>>>>>>> 446947d (Start 2.0.1)
 				mars.rotation.y += 0.02;
 				jupiter.rotation.y += 0.03;
 				saturn.rotation.y += 0.04;
 				ring.rotation.y -= 	0.01;
+<<<<<<< HEAD
+=======
+				// ur_ring.rotation.y -= 	0.01;
+				// ur_ring.rotation.x -= 	0.01;
+>>>>>>> 446947d (Start 2.0.1)
 				uran.rotation.y += 0.06;
 				neptun.rotation.y += 0.07;
 if(moving === true){
@@ -968,6 +1180,12 @@ if(movingVenera === true){
 if(movingEarth === true){
 			earth.position.x = Math.sin(t*0.01)*9500;
 			 earth.position.z = Math.cos(t*0.01)*9500;
+<<<<<<< HEAD
+=======
+			 
+			cloudMesh.position.z = Math.cos(t*0.01)*9500;
+			cloudMesh.position.x = Math.sin(t*0.01)*9500;
+>>>>>>> 446947d (Start 2.0.1)
 }
 //moon
 			
@@ -1002,13 +1220,23 @@ if(movingSaturn === true){
 //				saturn.position.x = 13000;
 
 			ring.position.x = saturn.position.x;
+<<<<<<< HEAD
 			ring.position.z = saturn.position.z
+=======
+			ring.position.z = saturn.position.z;
+>>>>>>> 446947d (Start 2.0.1)
 
 
 // //Uran
 if(movingUran === true){
 			uran.position.x = Math.sin(t*0.02)*17000;
 			uran.position.z = Math.cos(t*0.02)*17000;
+<<<<<<< HEAD
+=======
+
+			ur_ring.position.x = uran.position.x;
+			ur_ring.position.z = uran.position.z;
+>>>>>>> 446947d (Start 2.0.1)
 //				 uran.position.x = 14000;
 }
 ///Neptun
@@ -1018,9 +1246,15 @@ if(movingNeptun === true){
 }
 //				neptun.position.x = 14800;
 }
+<<<<<<< HEAD
 // // //camera
 			  // camera.position.z = mercury.position.z;
 			  // camera.lookAt(mercury.position);
+=======
+// //camera
+			  // camera.position.z = earth.position.z;
+			  // camera.lookAt(cloudMesh.position);
+>>>>>>> 446947d (Start 2.0.1)
 			  
 
 			  // 	scene.rotation.x = mouseX * 0.0005;
@@ -1117,6 +1351,10 @@ let anylang = true;
 <script src="./information.js"></script>
 <script src="./languages/language_Button.js"></script>
 <script src="./languages.js"></script>
+<<<<<<< HEAD
+=======
+<script src="./modal.js"></script>
+>>>>>>> 446947d (Start 2.0.1)
 
 </body>
 </html>
